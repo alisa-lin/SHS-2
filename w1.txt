@@ -1,0 +1,189 @@
+14
+
+1
+1
+0
+0
+It's your first day of school, and so far everything is going well. Your first class is 
+
+1
+1
+1
+0
+. As you head to class, someone taps you on the shoulder.
+"Hey!" It's a girl you've never seen before. "Do you have 
+
+0
+4
+3
+1
+0 0
+3
+0 1
+ class in Room 211 right now?" 
+You nod and say yes.
+"Great, me too!" She smiles at you. "I'm Anne."
+1: Introduce yourself normally.
+2: Crack a lame joke.
+"I'm glad I met you," Anne says. "I'm new to Belford High, so I'm a little nervous about making new friends."
+Anne laughs. "I love lame jokes," she says.
+(+ 1 relationship with Anne)
+"I'm glad I met you," she continues. "I'm new to Belford High, so I'm a little nervous about making new friends."
+
+1
+1
+1
+0
+"No way, I'm new too!" you respond. "I thought I'd be the only one to move schools right before senior year."
+"Well, I'm glad we have each other," Anne says. "I actually like 
+
+1
+1
+18
+1
+, but I'm not the best at it, so I might need your help at some point during the semester." 
+"Yeah, likewise," you say. 
+
+Your first class goes by in a flash. Your teacher explained that you'll have one test every three weeks, three total in the semester — during weeks 3, 6, and 9 — and a final exam in week 12. Each test is worth 20% of your course mark and the final exam is worth 40%. You know you'll have to work hard if you want to make it to Belford University.
+
+After class, Anne approaches you.
+"Do you think you'll join any extracurriculars?" she asks.
+"I don't know yet," you respond. "What about you?"
+"I think I'll try out for the girls' basketball team." She points at a poster on a wall nearby. It reads:
+BELFORD BASKETBALL
+TRYOUTS HELD NEXT WEEK IN THE LARGE GYM!
+BOYS TRYOUTS: MONDAY AFTER SCHOOL
+GIRLS TRYOUTS: MONDAY DURING LUNCH
+"Oh, I didn't know you liked basketball!" you say.
+"Yeah, I played a bit at my last school," Anne replies. 
+The bell rings, and Anne looks at her phone. "Oh, shoot. We have to get to class! I'll see you tomorrow!"
+You wave goodbye and head to your next class.
+
+Your next class is 
+
+0
+4
+1
+2
+1 1
+4
+1 0
+. You sit down next to an artsy-looking girl near the window. This time, you decide to introduce yourself first. How do you introduce yourself?
+1: Be friendly.
+2: Act cool.
+"Oh, hi!" She seems surprised at your introduction, but warms up immediately. "I'm Camila. It's nice to meet you!"
+(+ 1 relationship with Camila)
+She doesn't hear you at first, so you try again. After a few more tries, she finally looks at you, a little surprised.
+"Sorry, were you talking to me?"
+You nod a little sheepishly. "Sorry, I should have been more forward. What's your name?"
+"Oh," she says. "I'm Camila."
+
+1
+1
+6
+1
+You notice she has a camera on her desk. "Is that yours?" you ask.
+She nods. "Yeah, I take photos for the Belford High Gazette."
+"Oh, that's really cool! I didn't know we had a newspaper!" you say.
+"Yeah, if you want to join, James, the senior editor, is doing interviews next Monday after school. They'll be in the library if you're interested."
+"Thanks, I'll check it out," you say, right as class begins.
+
+The schedule for 
+
+1
+1
+0
+0
+ class is the same as it was for 
+
+0
+1
+8
+2
+0 1
+2
+0 1
+. Three tests and an exam at the end, with the same weighting. You wonder if your last class will be the same as well. But for now, lunch!
+
+At lunch, everyone seems to be sitting with their friends. It's tough being the new kid in your last year of high school. You take a seat on your own, but soon enough, someone joins you.
+"Hi, I'm Ryan, what's your name?"
+You look up as Ryan takes a seat and introduce yourself.
+"Are you new here?" Ryan asks.
+"Yes, I am," you say.
+"Well, how do you like Belford High so far?"
+1: I'm enjoying it. People here seem pretty cool.
+2: It's kind of lonely being the new kid, to be honest.
+(+ 1 relationship with Ryan)
+Ryan smiles. "That's cool. What about extracurriculars? Planning to join any yet?"
+(+ 1 relationship with Ryan)
+"Yeah, I totally get it," he says. "It can help to join some extracurriculars. Have you noticed any yet?"
+
+0
+3
+8
+1
+0
+1
+1
+3
+2
+"Yeah," you say, "I've heard of basketball and the newspaper... the... Belford Gazette, was it?"
+"The Belford High Gazette," Ryan nods. "Belford's orchestra is pretty good as well, if you play. They usually place in the city-wide competitions at the end of the semester."
+"Oh, that's cool," you respond. "Who usually gets first?"
+"Well, we got first three years ago," Ryan explains, "but since then we've placed second to Central Tech Collegiate Institute. CTCI is a bit of a rival school for us; in almost everything they either beat us by a little or we beat them by a little. But it's all good fun."
+"CTCI, huh." You look them up on Google. "Oh, they have a school newspaper too. It looks really nice."
+"Yeah, and we play them in basketball every year. It's kind of impossible to avoid them." Ryan pauses. "Orchestra auditions are next Monday after school in the music room. They're pretty informal, you'll probably get in if you try."
+"Seems like everything is Monday after school," you comment.
+"Yeah, they do that on purpose I think," Ryan responds. "They don't want you joining everything. Have you decided what you'll join?"
+1: I think I'm going to try out for basketball.
+2: The newspaper seems pretty cool, I'll give that a try.
+3: I'd be down to join orchestra.
+Ryan smiles. "Yeah, I think I'll try that out too! I don't usually try sports, but I wanted to step outside of my comfort zone. It's the last year of high school, I might as well."
+Ryan smiles. "I was planning to join the newspaper as well! I've heard James, the senior editor, can be kind of intimidating, though. But if we do it together it'll be a lot more fun."
+Ryan smiles. "Hey, cool, what do you play?"
+"Violin," you answer, "but I'm not very good yet."
+"Yeah, don't worry about it, you'll get a lot better," Ryan says. "I play cello."
+
+1
+1
+1
+2
+The bell rings, signalling the end of lunch.
+"Shoot! I have 
+
+1
+1
+8
+2
+ class. It was nice meeting you!" you say, standing up to leave.
+"Yeah, you too!" Ryan says, packing up as well. "I'll see you at tryouts Monday then!"
+
+In class, the teacher is going through the same course format you've heard twice today already, when suddenly someone taps you on the shoulder.
+"Hey! You dropped your pencil," she whispers, handing you a pencil.
+You take it. "Thanks!" you whisper back.
+"I'm Sara, what's your name?"
+You introduce yourself and then pause to look at the teacher. "Are you sure we should be talking in class?"
+Sara laughs. "Don't worry about Mr. Serres. He's way too old to be teaching; he won't see or hear us if we're not obnoxious about it. He's the only one qualified to teach 
+
+0
+4
+5
+2
+2 1
+1
+2 0
+, and I hear the principal begged him to stay when he tried to retire. Sucks for all of us because he's soooo boring."
+"Oh..." you say slowly. "How come you took this class then?"
+Sara rolls her eyes. "My dad makes me. If it were up to me, I'd only be taking music."
+"Oh, you're into music?" you say.
+"Yeah!" Sara lights up. "I play clarinet! Do you play?"
+1: A bit of violin. Nothing too crazy, but it's lots of fun.
+2: A bit of violin, but I'm not really into it.
+"No way, you should totally join orchestra! I'm playing a clarinet concerto with them this semester, it'll be sooo cool!"
+(+ 1 relationship with Sara)
+"Oh, I see," Sara says. "It's not easy, but it can be really rewarding if you stick to it, trust me. You should join orchestra if you play violin! I'm playing a clarinet concerto with them this semester, it'll be really cool!"
+
+2
+2
+"Yeah, I'm thinking about it," you say, without telling her that you've already made up your mind.
+The bell rings. You're officially done your first day at Belford High!

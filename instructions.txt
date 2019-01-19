@@ -1,0 +1,27 @@
+Number of passages
+
+Type of passage (choice: 0; name: 1; end: 2)
+CHOICE:
+Effect of choice (0 no effect, 1 setRel, 2 setSkill, 3 setPath, 4 setGirlRel)
+Number of text lines
+Number of lines for choice 1
+choice1Effect (i.e. parameters for setBlank)
+Number of lines for choice 2
+choice2Effect (i.e. parameters for setBlank)
+TEXT
+CHOICE 1
+CHOICE 2
+CHOICE 1 STORY
+CHOICE 2 STORY
+
+NAME:
+Type of name: (class: 1; friend: 2)
+Number of lines (without name — i.e. number of lines -1)
+Index of class
+TEXT
+
+// When coding, the setPath choices will require three options!
+
+END:
+Number of lines
+TEXT
