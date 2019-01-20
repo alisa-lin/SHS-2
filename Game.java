@@ -630,8 +630,8 @@ public class Game {
 	public void weekOne() {
 		System.out.println("***** WEEK ONE *****");
 		System.out.println("It's the day before school begins, and you have an appointment with the guidance counselor to sort out your courses for the semester.");
-		//player.getStats().courseSelection();
-		//player.setPath(0);
+		player.getStats().courseSelection();
+		player.setPath(0);
 		this.saveGame();
 
 		try {
