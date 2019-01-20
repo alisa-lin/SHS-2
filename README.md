@@ -1,5 +1,5 @@
 # SHS 2
-SHS 2 is a Choose Your Own Adventure game, played in the command line. You play a teenage boy in his senior year at a new high school as he navigates the world of classes, extracurriculars, friends, enemies, and more. 
+SHS 2 is a Choose Your Own Adventure game, played from the command line. You play a teenage boy in his senior year at a new high school as he navigates the world of classes, extracurriculars, friends, enemies, and more. 
 
 ## How to play
 Download all files. Compile and run GameRunner.java. The narrative will begin in text form in your command line environment or IDE, and you will be able to control the story by making choices as they appear. 
