@@ -63,6 +63,10 @@ public class Stats {
 	}
 
 	// Mutators
+
+	// Most of the setBlank methods are for loadSave() in the Game class.
+	// The editBlank methods are for gameplay.
+
 	public void setCourses(int courseID, String course) {
 		courses[courseID] = course;
 	}
@@ -79,19 +83,30 @@ public class Stats {
 		pathSkill = ps;
 	}
 
+	public void editMark(int courseID, int markChange) {
+		marks[courseID] += markChange;
+	}
+
+	public void editStudy(int courseID, int studyChange) {
+		study[courseID] += studyChange;
+	}
+
+	public void editPathSkill(int ps) {
+		pathSkill += ps;
+	}
+
 	public void setFriendRel(int friendID, int rel) {
 		friendRel[friendID] = rel;
+	}
+
+	public void editFriendRel(int friendID, int relChange) {
+		friendRel[friendID] += relChange;
 	}
 
 	public void setFriendName(int friendID, String name) {
 		friendName[friendID] = name;
 	}
 
-	// initializes friendName
-	public void initializeFriendName() {
-		friendName[0] = "Ryan";
-		friendName[3] = "Olivia";
-	}
 	// sets original GF
 	public void setOrigGF(String ogf) {
 		friendName[2] = ogf;

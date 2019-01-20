@@ -8,16 +8,13 @@ public class Player {
 	// Path 1: Basketball; Path 2: Orchestra; Path 3: School newspaper
 	private int week;   // Current week
 	private boolean olivia; // True of the player is dating Olivia, false otherwise.
-	private int[] girls = new int[3]; // Describing the girls the player meets in Week One
-	// 0: Anne; 1: Camila; 2: Sara
 
 	// Constructors
-	public Player(int path, Stats stats, int week, boolean olivia, int[] girls) {
+	public Player(int path, Stats stats, int week, boolean olivia) {
 	this.stats = stats;
 	this.path = path;
 	this.week = week;
 	this.olivia = olivia;
-	this.girls = girls;
 	}
 
 	// Accessors
@@ -49,10 +46,6 @@ public class Player {
 		return olivia;
 	}
 
-	public int[] getGirlRel() {
-		return girls;
-	}
-
 	// Mutators
 	public void setStats(Stats stats) {
 		this.stats = stats;
@@ -68,10 +61,6 @@ public class Player {
 
 	public void setOlivia(boolean olv) {
 		this.olivia = olv;
-	}
-
-	public void setGirlRel(int id, int rel) {
-		this.girls[id] = rel;
 	}
 
 	// Allocation of free time after school every week.
@@ -182,48 +171,5 @@ public class Player {
 				}
 			}
 		}
-	}
-
-	// User selection of path in Week 1.
-	public void choosePath() {
-		System.out.println("The basketball tryouts, orchestra audition, and school newspaper interview are all next Monday during lunch. You won't be able to do all three.");
-		System.out.println("You're going to have to choose just one. Which extracurricular do you want to be involved in?");
-
-		System.out.println("Choice 1: Basketball");
-		System.out.println("Choice 2: Orchestra");
-		System.out.println("Choice 3: School newspaper");
-
-		Scanner sc = new Scanner(System.in);
-		int choice;
-		String flush;
-		boolean valid = false;
-
-		while (!valid) {
-			try {
-				choice = sc.nextInt();
-				if (!(choice > 0 && choice <= 3)) {
-					System.out.println("Invalid input, please try again.");
-				} else if (choice == 1) {
-					setPath(choice);
-					stats.setEnemy("Nicholas");
-					valid = true;
-				} else if (choice == 2) {
-					setPath(choice);
-					stats.setEnemy("James");
-					valid = true;
-				} else if (choice == 3) {
-					setPath(choice);
-					stats.setEnemy("Fernando");
-					valid = true;
-				}
-			} catch (NumberFormatException nfx) {
-				System.out.println("Invalid input, please try again.");
-				flush = sc.next();
-			} catch (InputMismatchException imx) {
-				System.out.println("Invalid input, please try again.");
-				flush = sc.next();
-			}
-		}
-		
 	}
 }

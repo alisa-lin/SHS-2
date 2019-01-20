@@ -9,16 +9,28 @@ public class Game {
 
 	// Initialized objects
 	private Stats initStats; // initial stats object
-	private int initPath = 0;
+	private int initPath = 0; // initial path (0 is undetermined)
+	private int initPathSkill = 0; // inital path skill
+
+	// The courses, marks, and study arrays work in conjuction to each other
 	private String[] initCourses = new String[courseNum];
 	private int[] initMarks = new int[courseNum];
 	private int[] initStudy = new int[courseNum];
-	private int initPathSkill = 0;
+
+	// The friendname and friendrel arrays work in conjuction to each other
 	private String[] initFriendName = {"Ryan", "Enemy", "OrigGF", "Olivia"};
 	private int[] initFriendRel = {1, -3, 1, 1};
-	private int initWeek = 1;
-	private boolean initOlivia = false;
-	private int[] initGirls = {1, 1, 1};
+	private int initWeek = 1; // initial week
+	private boolean initOlivia = false; // Olivia is a character that gets introduced later in the game
+
+	// This array is only relevant for Week One. 
+	// 0: Anne; 1: Camila; 2: Sara
+	private int[] girls = {1, 1, 1};
+
+	// This method is only used in the first week.
+	public void editGirls (int id, int rel) {
+		this.girls[id] += rel;
+	}
 
 	// Initializes the player at the beginning of the game.
 	public void initializeStats() {
@@ -28,7 +40,7 @@ public class Game {
 		initStudy[i] = 0;
 		}
 		initStats = new Stats(initCourses, initMarks, initStudy, initPathSkill, initFriendName, initFriendRel);
-		player = new Player (initPath, initStats, initWeek, initOlivia, initGirls);
+		player = new Player (initPath, initStats, initWeek, initOlivia);
 	}
 
 	// Start game!!
@@ -82,18 +94,12 @@ public class Game {
 		System.out.println("");
 	}
 
-	public void weekOne() {
-		System.out.println("***** WEEK ONE *****");
-		System.out.println("It's the day before school begins, and you have an appointment with the guidance counselor to sort out your courses for the semester.");
-		//player.getStats().courseSelection();
-		//player.setPath(0);
-		this.saveGame();
 
+	public void readStory(BufferedReader in) {
 		boolean valid = false;
 		String flush;
 
 		try {
-			BufferedReader in = new BufferedReader(new FileReader("w1.txt"));
 			int numPassage = Integer.parseInt(in.readLine()); // how many passages there are
 			in.readLine();
 			int choice1;
@@ -103,16 +109,18 @@ public class Game {
 			int choice1Rel;
 			int choice1Skill;
 			int choice1Path;
+			int choice1Girl;
 			int choice2ID;
 			int choice2Rel;
 			int choice2Skill = 0;
 			int choice2Path;
+			int choice2Girl;
 			int choice3Path;
+			int choice3Girl;
 			String thisLine; // holds each line of text
 
 			for (int j = 0; j < numPassage; j++) {
 				int type = Integer.parseInt(in.readLine()); // how this passage of text ends
-				//System.out.printf("Type: %d\n", type);
 				
 				if (type == 0) { // story section that ends with a choice
 					int effect = Integer.parseInt(in.readLine()); // type of effect of choice
@@ -178,7 +186,7 @@ public class Game {
 
 							break;
 
-						case 1: // setFriendRel
+						case 1: // editFriendRel
 							choice1 = Integer.parseInt(in.readLine()); // lines in choice 1 text
 							choice1ID = Character.getNumericValue(in.read());
 							in.read();
@@ -194,12 +202,9 @@ public class Game {
 							// prints story text before choice
 							for (int i = 0; i < lines + 2; i++) {
 								thisLine = in.readLine();
-								//System.out.println("I've read the line! Now I will determine of the line is blank.");
 								if (thisLine == "") {
-									//System.out.println("This line is blank!");
 									System.out.println("");
 								} else {
-									//System.out.println("This line is not blank!");
 									System.out.print(thisLine);
 									input.nextLine();
 								}
@@ -214,7 +219,7 @@ public class Game {
 
 									if (choice == 1) {
 										valid = true;
-										player.getStats().setFriendRel(choice1ID, player.getStats().getFriendRel()[choice1ID] + choice1Rel);
+										player.getStats().editFriendRel(choice1ID, choice1Rel);
 
 										for (int i = 0; i < choice1; i++) {
 											System.out.print(in.readLine());
@@ -226,7 +231,7 @@ public class Game {
 										}
 									} else if (choice == 2) {
 										valid = true;
-										player.getStats().setFriendRel(choice2ID, player.getStats().getFriendRel()[choice2ID] + choice2Rel);
+										player.getStats().editFriendRel(choice2ID, choice2Rel);
 
 										for (int i = 0; i < choice1; i++) {
 											in.readLine();
@@ -250,7 +255,7 @@ public class Game {
 
 							break;
 
-						case 2: // setPathSkill
+						case 2: // editPathSkill
 							choice1 = Integer.parseInt(in.readLine()); // lines in choice 1 text
 							choice1Skill = Character.getNumericValue(in.read());
 							in.readLine();
@@ -279,7 +284,7 @@ public class Game {
 
 									if (choice == 1) {
 										valid = true;
-										player.getStats().setPathSkill(player.getStats().getPathSkill() + choice1Skill);
+										player.getStats().editPathSkill(choice1Skill);
 
 										for (int i = 0; i < choice1; i++) {
 											System.out.print(in.readLine());
@@ -291,7 +296,7 @@ public class Game {
 										}
 									} else if (choice == 2) {
 										valid = true;
-										player.getStats().setPathSkill(player.getStats().getPathSkill() + choice2Skill);
+										player.getStats().editPathSkill(choice2Skill);
 
 										for (int i = 0; i < choice1; i++) {
 											in.readLine();
@@ -349,6 +354,7 @@ public class Game {
 									if (choice == 1) {
 										valid = true;
 										player.setPath(choice1Path);
+										player.getStats().setEnemy("Nicholas");
 
 										for (int i = 0; i < choice1; i++) {
 											System.out.print(in.readLine());
@@ -362,13 +368,13 @@ public class Game {
 									} else if (choice == 2) {
 										valid = true;
 										player.setPath(choice2Path);
+										player.getStats().setEnemy("James");
 
 										for (int i = 0; i < choice1; i++) {
 											in.readLine();
 										}
 
 										for (int i = 0; i < choice2; i++) {
-											player.getStats().setPathSkill(player.getStats().getPathSkill() + choice2Skill);
 											System.out.print(in.readLine());
 											input.nextLine();
 										}
@@ -380,6 +386,7 @@ public class Game {
 									} else if (choice == 3) {
 										valid = true;
 										player.setPath(choice3Path);
+										player.getStats().setEnemy("Fernando");
 
 										for (int i = 0; i < choice1 + choice2; i++) {
 											in.readLine();
@@ -404,7 +411,7 @@ public class Game {
 
 						break;
 
-						case 4: // setGirlRel
+						case 4: // editGirls
 							choice1 = Integer.parseInt(in.readLine()); // lines in choice 1 text
 							choice1ID = Character.getNumericValue(in.read());
 							in.read();
@@ -437,7 +444,7 @@ public class Game {
 
 									if (choice == 1) {
 										valid = true;
-										player.setGirlRel(choice1ID, player.getGirlRel()[choice1ID] + choice1Rel);
+										editGirls(choice1ID, choice1Rel);
 
 										for (int i = 0; i < choice1; i++) {
 											System.out.print(in.readLine());
@@ -450,7 +457,7 @@ public class Game {
 										}
 									} else if (choice == 2) {
 										valid = true;
-										player.setGirlRel(choice2ID, player.getGirlRel()[choice2ID] + choice2Rel);
+										editGirls(choice2ID, choice2Rel);
 
 										for (int i = 0; i < choice1; i++) {
 											in.readLine();
@@ -475,6 +482,92 @@ public class Game {
 
 							break;
 
+						case 5: // setOrigGF
+							choice1 = Integer.parseInt(in.readLine()); // lines in choice 1 text
+							choice1Girl = Integer.parseInt(in.readLine());
+
+							choice2 = Integer.parseInt(in.readLine()); // lines in choice 2 text
+							choice2Girl = Integer.parseInt(in.readLine());
+
+							choice3 = Integer.parseInt(in.readLine()); // lines in choice 1 text
+							choice3Girl = Integer.parseInt(in.readLine());
+
+							// prints story text before choice
+							for (int i = 0; i < lines + 3; i++) {
+								thisLine = in.readLine();
+								if (thisLine == "") {
+									System.out.println("");
+								} else {
+									System.out.print(thisLine);
+									input.nextLine();
+								}
+							}
+
+							// allows the user to make their choice and
+							// prints the text corresponding to their selection.
+							while (!valid) {
+								System.out.print("Choice: ");
+								try {
+									int choice = input.nextInt();
+
+									if (choice == 1) {
+										valid = true;
+										player.getStats().setOrigGF("Anne");
+										player.getStats().setFriendRel(2, girls[choice]);
+
+										for (int i = 0; i < choice1; i++) {
+											System.out.print(in.readLine());
+											input.nextLine();
+										}
+
+										for (int i = 0; i < choice2 + choice3; i++) {
+											in.readLine();
+										}
+
+									} else if (choice == 2) {
+										valid = true;
+										player.getStats().setOrigGF("Camila");
+										player.getStats().setFriendRel(2, girls[choice]);
+
+										for (int i = 0; i < choice1; i++) {
+											in.readLine();
+										}
+
+										for (int i = 0; i < choice2; i++) {
+											System.out.print(in.readLine());
+											input.nextLine();
+										}
+
+										for (int i = 0; i < choice3; i++) {
+											in.readLine();
+										}
+
+									} else if (choice == 3) {
+										valid = true;
+										player.getStats().setOrigGF("Sara");
+										player.getStats().setFriendRel(2, girls[choice]);
+
+										for (int i = 0; i < choice1 + choice2; i++) {
+											in.readLine();
+										}
+
+										for (int i = 0; i < choice3; i++) {
+											System.out.print(in.readLine());
+											input.nextLine();
+										}
+
+									} else {
+										System.out.println("Invalid input, please try again.");
+									}
+								} catch (NumberFormatException nfx) {
+									System.out.println("Invalid input, please try again.");
+									flush = input.next();
+								} catch (InputMismatchException imx) {
+									System.out.println("Invalid input, please try again.");
+									flush = input.next();
+								}
+							}
+
 						default: 
 							System.out.println("Error reading Week One.");
 							break;
@@ -485,11 +578,8 @@ public class Game {
 
 				} else if (type == 1) { // passage ends with a name insertion
 					int nameType = Integer.parseInt(in.readLine());
-					//System.out.printf("nameType: %d\n", nameType);
 					int lines = Integer.parseInt(in.readLine());
-					//System.out.printf("lines: %d\n", lines);
 					int index = Integer.parseInt(in.readLine());
-					//System.out.printf("name index: %d\n", index);
 
 					for (int i = 0; i < lines; i ++) {
 						thisLine = in.readLine();
@@ -535,8 +625,21 @@ public class Game {
 		} catch (IOException iox) {
 			System.out.println("Error printing file.");
 		}
+	}
 
-		// first free time method; no texting option.
+	public void weekOne() {
+		System.out.println("***** WEEK ONE *****");
+		System.out.println("It's the day before school begins, and you have an appointment with the guidance counselor to sort out your courses for the semester.");
+		//player.getStats().courseSelection();
+		//player.setPath(0);
+		this.saveGame();
+
+		try {
+			BufferedReader w1 = new BufferedReader(new FileReader("w1.txt"));
+			readStory(w1);
+		} catch (FileNotFoundException fnfx) {
+			System.out.println("File not found.");
+		}
 
 		this.saveGame();
 		System.out.println("The game has been saved.");
