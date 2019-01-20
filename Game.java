@@ -102,6 +102,7 @@ public class Game {
 		try {
 			int numPassage = Integer.parseInt(in.readLine()); // how many passages there are
 			in.readLine();
+			// declaration of variables to be used depending on the type of passage
 			int choice1;
 			int choice2;
 			int choice3;
@@ -152,9 +153,8 @@ public class Game {
 										valid = true;
 
 										for (int i = 0; i < choice1; i++) {
-											System.out.println(in.readLine());
 											input.nextLine();
-											input.nextLine();
+											System.out.print(in.readLine());
 										}
 
 										for (int i = 0; i < choice2; i++) {
@@ -168,9 +168,8 @@ public class Game {
 										}
 
 										for (int i = 0; i < choice2; i++) {
-											System.out.println(in.readLine());
 											input.nextLine();
-											input.nextLine();
+											System.out.print(in.readLine());
 										}
 									} else {
 										System.out.println("Invalid input, please try again.");
@@ -222,8 +221,8 @@ public class Game {
 										player.getStats().editFriendRel(choice1ID, choice1Rel);
 
 										for (int i = 0; i < choice1; i++) {
-											System.out.print(in.readLine());
 											input.nextLine();
+											System.out.print(in.readLine());
 										}
 
 										for (int i = 0; i < choice2; i++) {
@@ -238,8 +237,8 @@ public class Game {
 										}
 
 										for (int i = 0; i < choice2; i++) {
+											Sinput.nextLine();
 											System.out.print(in.readLine());
-											input.nextLine();
 										}
 									} else {
 										System.out.println("Invalid input, please try again.");
@@ -287,8 +286,8 @@ public class Game {
 										player.getStats().editPathSkill(choice1Skill);
 
 										for (int i = 0; i < choice1; i++) {
-											System.out.print(in.readLine());
 											input.nextLine();
+											System.out.print(in.readLine());
 										}
 
 										for (int i = 0; i < choice2; i++) {
@@ -303,8 +302,8 @@ public class Game {
 										}
 
 										for (int i = 0; i < choice2; i++) {
-											System.out.print(in.readLine());
 											input.nextLine();
+											System.out.print(in.readLine());
 										}
 									} else {
 										System.out.println("Invalid input, please try again.");
@@ -357,8 +356,8 @@ public class Game {
 										player.getStats().setEnemy("Nicholas");
 
 										for (int i = 0; i < choice1; i++) {
-											System.out.print(in.readLine());
 											input.nextLine();
+											System.out.print(in.readLine());
 										}
 
 										for (int i = 0; i < choice2 + choice3; i++) {
@@ -375,8 +374,8 @@ public class Game {
 										}
 
 										for (int i = 0; i < choice2; i++) {
-											System.out.print(in.readLine());
 											input.nextLine();
+											System.out.print(in.readLine());
 										}
 
 										for (int i = 0; i < choice3; i++) {
@@ -393,8 +392,8 @@ public class Game {
 										}
 
 										for (int i = 0; i < choice3; i++) {
-											System.out.print(in.readLine());
 											input.nextLine();
+											System.out.print(in.readLine());
 										}
 
 									} else {
@@ -447,9 +446,8 @@ public class Game {
 										editGirls(choice1ID, choice1Rel);
 
 										for (int i = 0; i < choice1; i++) {
+											input.nextLine();
 											System.out.print(in.readLine());
-											input.nextLine();
-											input.nextLine();
 										}
 
 										for (int i = 0; i < choice2; i++) {
@@ -464,9 +462,8 @@ public class Game {
 										}
 
 										for (int i = 0; i < choice2; i++) {
-											//System.out.printf("index is: %d\n", i);
-											System.out.print(in.readLine());
 											input.nextLine();
+											System.out.print(in.readLine());
 										}
 									} else {
 										System.out.println("Invalid input, please try again.");
@@ -516,8 +513,8 @@ public class Game {
 										player.getStats().setFriendRel(2, girls[choice]);
 
 										for (int i = 0; i < choice1; i++) {
-											System.out.print(in.readLine());
 											input.nextLine();
+											System.out.print(in.readLine());
 										}
 
 										for (int i = 0; i < choice2 + choice3; i++) {
@@ -534,8 +531,8 @@ public class Game {
 										}
 
 										for (int i = 0; i < choice2; i++) {
-											System.out.print(in.readLine());
 											input.nextLine();
+											System.out.print(in.readLine());
 										}
 
 										for (int i = 0; i < choice3; i++) {
@@ -552,8 +549,8 @@ public class Game {
 										}
 
 										for (int i = 0; i < choice3; i++) {
-											System.out.print(in.readLine());
 											input.nextLine();
+											System.out.print(in.readLine());
 										}
 
 									} else {
