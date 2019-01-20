@@ -7,7 +7,7 @@ Download all files. Compile and run GameRunner.java. The narrative will begin in
 ## Notes
 * The story is incomplete as only the introduction and the better part of the first week (of twelve weeks of story) have been written. 
 
-* One bug that needs to be worked out is the issue with new lines in multiple-line text that follows a user-made decision. Typically, the second line of text prints out without a new line whereas all subsequent lines print with the new line.
+* One ability that I'd like to add is multiple checkpoints within each week. Currently, information only saves at the end of each week because that allows the save file to be consistent at each save (i.e. the information that needs to be saved at each save point is the same). However, each week's storyline can be quite long, so it would be helpful to introduce stages of each week and save information at each stage.
 
 * For those interested in taking this code and writing your own story, the instructions.txt file outlines the format of the story text that allows the story to be run. For examples of what it looks like, users may look at w1.txt. To run the newly added section of the story, you must write a method within Game.java that calls the readStory() method, passing in a BufferedReader object that reads in your text file.
 
