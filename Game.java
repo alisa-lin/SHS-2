@@ -237,7 +237,7 @@ public class Game {
 										}
 
 										for (int i = 0; i < choice2; i++) {
-											Sinput.nextLine();
+											input.nextLine();
 											System.out.print(in.readLine());
 										}
 									} else {
